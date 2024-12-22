@@ -23,26 +23,7 @@ body {
     background-color: red;
     transform: rotateY(0deg);
     animation: rotate 5s infinite linear;
-    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-    box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
-}
-
-@keyframes rotate {
-    0% {
-        transform: rotateY(0deg) rotateX(0deg);
-    }
-    25% {
-        transform: rotateY(90deg) rotateX(0deg);
-    }
-    50% {
-        transform: rotateY(180deg) rotateX(0deg);
-    }
-    75% {
-        transform: rotateY(270deg) rotateX(0deg);
-    }
-    100% {
-        transform: rotateY(360deg) rotateX(0deg);
-    }
+    margin: 50px;
 }
 
 .heart::before,
@@ -62,4 +43,22 @@ body {
 
 .heart::after {
     left: 50px;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotateY(0deg) rotateX(0deg);
+    }
+    25% {
+        transform: rotateY(90deg) rotateX(0deg);
+    }
+    50% {
+        transform: rotateY(180deg) rotateX(0deg);
+    }
+    75% {
+        transform: rotateY(270deg) rotateX(0deg);
+    }
+    100% {
+        transform: rotateY(360deg) rotateX(0deg);
+    }
 }
