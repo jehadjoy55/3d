@@ -1,53 +1,65 @@
-body {
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     background-color: black;
-    overflow: hidden;
 }
 
-.heart-container {
+.container {
     perspective: 1000px;
 }
 
 .heart {
+    position: relative;
     width: 100px;
     height: 100px;
-    position: relative;
-    transform-style: preserve-3d;
-    animation: rotate 5s linear infinite;
+    background-color: red;
+    transform: rotateY(0deg);
+    animation: rotate 5s infinite linear;
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotateY(0deg) rotateX(0deg);
+    }
+    25% {
+        transform: rotateY(90deg) rotateX(0deg);
+    }
+    50% {
+        transform: rotateY(180deg) rotateX(0deg);
+    }
+    75% {
+        transform: rotateY(270deg) rotateX(0deg);
+    }
+    100% {
+        transform: rotateY(360deg) rotateX(0deg);
+    }
 }
 
 .heart::before,
 .heart::after {
     content: '';
     position: absolute;
-    top: 0;
     width: 100px;
     height: 100px;
-    background: linear-gradient(45deg, red, pink);
+    background-color: red;
     border-radius: 50%;
 }
 
 .heart::before {
-    left: 50%;
-    transform: translate(-50%, 0) rotateZ(45deg);
-    clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+    top: -50px;
+    left: 0;
 }
 
 .heart::after {
-    left: 50%;
-    transform: translate(-50%, 0) rotateZ(-45deg);
-    clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
-}
-
-@keyframes rotate {
-    0% {
-        transform: rotateY(0deg);
-    }
-    100% {
-        transform: rotateY(360deg);
-    }
+    left: 50px;
 }
