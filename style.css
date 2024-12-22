@@ -24,6 +24,7 @@ body {
     transform: rotateY(0deg);
     animation: rotate 5s infinite linear;
     margin: 50px;
+    transform-style: preserve-3d;
 }
 
 .heart::before,
@@ -43,6 +44,26 @@ body {
 
 .heart::after {
     left: 50px;
+}
+
+.heart {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    transform: rotateY(0deg) rotateX(0deg);
+    animation: rotate 5s infinite linear;
+}
+
+.heart::before {
+    top: -50px;
+    left: 0;
+    transform: rotate(-45deg) scaleX(0.8);
+}
+
+.heart::after {
+    top: -50px;
+    left: 50px;
+    transform: rotate(45deg) scaleX(0.8);
 }
 
 @keyframes rotate {
