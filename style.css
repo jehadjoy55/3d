@@ -40,23 +40,6 @@ body {
 .heart::before {
     top: -50px;
     left: 0;
-}
-
-.heart::after {
-    left: 50px;
-}
-
-.heart {
-    position: relative;
-    width: 100px;
-    height: 100px;
-    transform: rotateY(0deg) rotateX(0deg);
-    animation: rotate 5s infinite linear;
-}
-
-.heart::before {
-    top: -50px;
-    left: 0;
     transform: rotate(-45deg) scaleX(0.8);
 }
 
